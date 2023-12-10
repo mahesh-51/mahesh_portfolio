@@ -8,6 +8,7 @@ import * as NProgress from "nprogress";
 import { usePathname } from "next/navigation";
 import Header from '../app/header'
 import Footer from '../app/footer'
+import Home from '../components/Home'
 interface LayoutProps {
     readonly pageTitle?: string;
     children: ReactNode;
@@ -32,9 +33,8 @@ export default function Layout({ pageTitle, children }: LayoutProps) {
                 <title className="text-white">{titleConcat}</title>
             </Head>
             <Header />
-            <div className="max-md:mt-16 flex flex-col flex-grow w-screen md:w-full min-h-screen">
+            <Home />
             {children}
-            </div>
             <Footer />
         </NextUIProvider>
     );
