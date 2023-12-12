@@ -21,7 +21,8 @@ export default function Header() {
     ];
 
     return (
-        <Navbar className="bg-indigo-600 p-3 flex justify-between" onMenuOpenChange={setIsMenuOpen}>
+        <>
+         <Navbar className="bg-black text-white p-3 flex justify-between border-2 border-black border-b-white" onMenuOpenChange={setIsMenuOpen}>
             <NavbarContent >
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -34,12 +35,12 @@ export default function Header() {
                         src={Logo}
                         className="text-center"
                     /> */}
-                    <p className="font-bold text-inherit">Mahesh Joshi</p>
+                    <p className="font-bold text-inherit">LOGO</p>
                 </NavbarBrand>
             </NavbarContent>
             <NavbarContent className="text-white" >
                 <NavbarItem className="hidden lg:flex">
-                    <Link href="">MAHESH JOSHI</Link>
+                    <Link href="">Heading</Link>
                 </NavbarItem>
             </NavbarContent>
 
@@ -76,6 +77,8 @@ export default function Header() {
                     </NavbarMenuItem>
                 ))}
             </NavbarMenu>
-        </Navbar>
+            </Navbar>
+        </>
+       
     );
 }
