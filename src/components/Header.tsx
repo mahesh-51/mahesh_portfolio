@@ -1,9 +1,10 @@
+"use client"
 import React from "react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@nextui-org/react";
 import Logo from "../images/DevsMeh.png";
 import Image from "next/image.js";
 
-export default function header() {
+export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const menuItems = [
@@ -20,31 +21,31 @@ export default function header() {
     ];
 
     return (
-        <Navbar className="bg-indigo-600" onMenuOpenChange={setIsMenuOpen}>
+        <Navbar className="bg-indigo-600 p-3 flex justify-between" onMenuOpenChange={setIsMenuOpen}>
             <NavbarContent >
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     className="sm:hidden"
                 />
                 <NavbarBrand>
-                    <Image
+                    {/* <Image
                         width={150}
                         alt="NextUI hero Image"
                         src={Logo}
                         className="text-center"
-                    />
-                    {/* <p className="font-bold text-inherit">Mahesh Joshi</p> */}
+                    /> */}
+                    <p className="font-bold text-inherit">Mahesh Joshi</p>
                 </NavbarBrand>
             </NavbarContent>
-            <NavbarContent className="text-white" justify="center">
+            <NavbarContent className="text-white" >
                 <NavbarItem className="hidden lg:flex">
                     <Link href="">MAHESH JOSHI</Link>
                 </NavbarItem>
             </NavbarContent>
 
-            <NavbarContent className="text-white" justify="end">
+            <NavbarContent className="text-white" >
                 <NavbarItem className="hidden lg:flex">
-                    <Link href="#">Home</Link>
+                    <Link href="/">Home</Link>
                 </NavbarItem>
                 <NavbarItem className="hidden lg:flex">
                     <Link href="#">Projects</Link>
@@ -53,7 +54,7 @@ export default function header() {
                     <Link href="#">Skills</Link>
                 </NavbarItem>
                 <NavbarItem className="hidden lg:flex">
-                    <Link href="#">About</Link>
+                    <Link href="/about">About</Link>
                 </NavbarItem>
                 <NavbarItem className="hidden lg:flex">
                     <Link href="#">Contact</Link>
