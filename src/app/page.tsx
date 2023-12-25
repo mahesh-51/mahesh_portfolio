@@ -75,7 +75,7 @@ const page = () => {
               <div className="flex max-md:flex-col-reverse container">
                   <div className='w-3/4 max-md:w-full mt-12 flex flex-col justify-center items-center '>
                       <div className=''>
-                          <h1 className='text-4xl'>Hey. I'm Mahesh Joshi</h1> <br />
+                          <h1 className='text-4xl'>Hey. I&apos;m Mahesh Joshi</h1> <br />
                       </div>
                       <div className=''>
                           <p className='text-xl text-justify p-3'>
