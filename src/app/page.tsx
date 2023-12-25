@@ -1,113 +1,231 @@
 import Image from 'next/image'
+import React from 'react'
+import webDev from '../images/webdev_2.png'
+import { Button, Card, CardBody, CardFooter, CardHeader } from '@nextui-org/react'
+import { FaPhoneAlt, FaRegFilePdf } from "react-icons/fa";
+import obiReactProject from "../images/obiReactProject.png";
+import simcardProject from "../images/simcardProject.png";
+import thcIndiaProject from "../images/thcIndiaProject.png";
+import php from "../images/skills/php.png";
+import Node from "../images/skills/nodejs.png";
+import Nextjs from "../images/skills/nextjs.png";
+import reactNative from "../images/skills/react.png";
+import typeScript from "../images/skills/typescript.png";
+import redux from "../images/skills/redux.png";
+import MongoDB from "../images/skills/mongodb.png";
+import javaScript from "../images/skills/js.png";
+import bitBucket from "../images/skills/bitbucket.png";
+import css from "../images/skills/css.png";
+import expressJs from "../images/skills/expressjs.png";
 
-export default function Home() {
+
+
+const page = () => {
+
+    const list = [
+        {
+          title: "PHP",
+          img: php,
+        },
+        {
+          title: "Node.js",
+          img: Node,
+        },
+        {
+          title: "Next.js",
+          img: Nextjs,
+        },
+        {
+            title: "Express.js",
+            img: expressJs,
+        },
+        {
+            title: "React Native",
+            img: reactNative,
+        },
+        {
+          title: "Typescript",
+          img: typeScript,
+        },
+        {
+          title: "Redux",
+          img: redux,
+        },
+        {
+          title: "Mongo DB",
+          img: MongoDB,
+        },
+        {
+          title: "JavaScript",
+          img: javaScript,
+        },
+        {
+            title: "Css",
+            img: css,
+          },
+        {
+          title: "BitBucket",
+          img: bitBucket,
+        },
+      ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+      <>
+          <main className="bg-white font-sans flex justify-center">
+              <div className="flex max-md:flex-col-reverse container">
+                  <div className='w-3/4 max-md:w-full mt-12 flex flex-col justify-center items-center '>
+                      <div className=''>
+                          <h1 className='text-4xl'>Hey. I&apos;m Mahesh Joshi</h1> <br />
+                      </div>
+                      <div className=''>
+                          <p className='text-xl text-justify p-3'>
+                              A passionate Full Stack Software Developer 🚀 <br />
+                              having an experience of building Web applications
+                              {/* with 
+                          JavaScript / Reactjs / Nodejs / Nextjs and some other cool libraries and frameworks.
+                          My expertise lies in building scalable, efficient, and maintainable web applications
+                          that provide a seamless user experience. */}
+                          </p>
+                      </div>
+                      <div className="flex gap-4 my-3">
+                          <button className="bg-transparent hover:bg-blue-500  text-blue-700 font-bold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded inline-flex items-center">
+                              <span className='mr-1'>Resume</span>
+                              <FaRegFilePdf />
+                          </button>
+                          <button className="bg-transparent hover:bg-blue-500  text-blue-700 font-bold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded inline-flex items-center">
+                              <span className='mr-2'>Contact Us</span>
+                              <FaPhoneAlt />
+                          </button>
+                      </div>
+                  </div>
+                  <div className='flex justify-center'>
+                      <Image
+                          height={600}
+                          width={600}
+                          alt="NextUI hero Image"
+                          src={webDev}
+                          className="text-center"
+                      />
+                  </div>
+              </div>
+          </main>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          <main className="bg-white font-sans conatiner">
+            <h1 className='flex justify-center text-4xl my-2'>Projects</h1>
+              <div className='max-md:flex-col flex justify-around'>
+                  <Card isFooterBlurred className="flex max-md:flex-col m-5 border border-1 rounded">
+                      <Image
+                          alt="obiReact"
+                          className="z-0 w-full h-full object-cover"
+                          src={obiReactProject}
+                      />
+                      <div className='flex items-center bg-indigo-300'>
+                          <div className="flex max-md:flex-col m-1">
+                              <Image
+                                  alt="obiReact"
+                                  className="rounded-full w-10 h-11 bg-black"
+                                  src={obiReactProject}
+                              />
+                              <div className="flex flex-col ml-2">
+                                  <p className="text-tiny">Lounge Booking Website</p>
+                                  <p className="text-tiny">Lounge Booking for guests!</p>
+                              </div>
+                          </div>
+                      </div>
+                      <button className="bg-transparent hover:bg-blue-500  text-blue-700 font-bold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded inline-flex items-center justify-center">
+                          View
+                      </button>
+                  </Card>
+                  <Card isFooterBlurred className="flex max-md:flex-col m-5 border border-1 rounded">
+                      <Image
+                          alt="obiReact"
+                          className="z-0 w-full h-full object-cover"
+                          src={simcardProject}
+                      />
+                      <div className='flex items-center bg-indigo-300'>
+                          <div className="flex max-md:flex-col m-1">
+                              <Image
+                                  alt="obiReact"
+                                  className="rounded-full w-10 h-11 bg-black"
+                                  src={simcardProject}
+                              />
+                              <div className="flex flex-col ml-2">
+                                  <p className="text-tiny">Simcard Website</p>
+                                  <p className="text-tiny">Refurbhised Simcard</p>
+                              </div>
+                          </div>
+                      </div>
+                      <button className="bg-transparent hover:bg-blue-500  text-blue-700 font-bold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded inline-flex items-center justify-center">
+                          View
+                      </button>
+                  </Card>
+                  <Card isFooterBlurred className="flex max-md:flex-col m-5 border border-1 rounded">
+                      <Image
+                          alt="obiReact"
+                          className="z-0 w-full h-full object-cover"
+                          src={thcIndiaProject}
+                      />
+                      <div className='flex items-center bg-indigo-300'>
+                          <div className="flex max-md:flex-col m-1">
+                              <Image
+                                  alt="obiReact"
+                                  className="rounded-full w-10 h-11 bg-black"
+                                  src={thcIndiaProject}
+                              />
+                              <div className="flex flex-col ml-2">
+                                  <p className="text-tiny">Handicraft</p>
+                                  <p className="text-tiny">Handicraft market website</p>
+                              </div>
+                          </div>
+                      </div>
+                      <button className="bg-transparent hover:bg-blue-500  text-blue-700 font-bold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded inline-flex items-center justify-center">
+                          View
+                      </button>
+                  </Card>
+              </div>
+          </main>
+          
+          <main className='bg-white font-sans conatiner'>
+            <h1 className='flex justify-center text-4xl my-2'>Skills</h1>
+            <div className="flex max-md:flex-col container">
+                  <div className='w-3/4 max-md:w-full flex flex-col justify-center items-center '>
+                      <div className=''>
+                          <p className='text-xl text-justify p-3'>
+                            ⚡ Develop highly interactive Front end / User Interfaces for your web applications
+                          </p>
+                      </div>
+                      <div className=''>
+                          <p className='text-xl text-justify p-3'>
+                          ⚡ Having worked extensively with the Express framework and Node.js for server-side programming, I have created Restful APIs and web servers that offer dependable and safe communication between the client and the server.
+                          </p>
+                      </div>
+                      <div className=''>
+                          <p className='text-xl text-justify p-3'>
+                          ⚡ Integration of third party services such as AWS / Azure
+                          </p>
+                      </div>
+                  </div>
+                  <div className='flex flex-wrap justify-center items-center'>
+                          {list.map((item, index) => (
+                              <Card key={index} shadow="sm" isPressable className="flex flex-col m-1">
+                                  <CardBody className="h-20">
+                                      <Image
+                                          width={50}
+                                          alt={item.title}
+                                          className="flex justify-center mt-3"
+                                          src={item.img}
+                                      />
+                                  </CardBody>
+                                  <CardFooter className="text-small inset-x-0 bottom-0">
+                                      <b>{item.title}</b>
+                                  </CardFooter>
+                              </Card>
+                          ))}
+                      </div>
+              </div>
+          </main>
+      </>
   )
 }
+
+export default page
