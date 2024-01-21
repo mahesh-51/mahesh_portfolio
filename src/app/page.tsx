@@ -20,6 +20,7 @@ import expressJs from "../images/skills/expressjs.png";
 import MainSection from '@/components/MainSection';
 import Skill from '@/components/Skill';
 import Projects from '@/components/Projects';
+import Contact from '@/components/Contact';
 
 
 
@@ -78,6 +79,7 @@ const page = () => {
         <MainSection />
         <Skill />
         <Projects />
+        <Contact />
       </div>
 
       {/* <main className="bg-white font-sans conatiner">
