@@ -19,6 +19,7 @@ import css from "../images/skills/css.png";
 import expressJs from "../images/skills/expressjs.png";
 import MainSection from '@/components/MainSection';
 import Skill from '@/components/Skill';
+import Projects from '@/components/Projects';
 
 
 
@@ -76,6 +77,7 @@ const page = () => {
       <div className='justify-center'>
         <MainSection />
         <Skill />
+        <Projects />
       </div>
 
       {/* <main className="bg-white font-sans conatiner">

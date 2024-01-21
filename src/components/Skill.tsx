@@ -77,24 +77,24 @@ const list = [
 const Skill = () => {
   return (
     <>
-      <div className='bg-slate-200 min-h-screen text-black'>
+      <div className='bg-slate-200 min-h-screen text-black p-10'>
         <h1 className='text-center text-6xl py-4 text-black'>Skills</h1>
         <div className="flex max-md:flex-col p-12">
-          <Card className="shadow-xl">
+          <Card className="bg-white shadow-xl rounded-xl m-2">
             <CardBody>
               <p className='text-xl text-justify p-3'>
                 Develop highly interactive Front end / User Interfaces for your web applications
               </p>
             </CardBody>
           </Card>
-          <Card className="shadow-xl">
+          <Card className="bg-white shadow-xl rounded-xl m-2">
             <CardBody>
               <p className='text-xl text-justify p-3'>
                 Having worked extensively with the Express framework and Node.js for server-side programming, I have created Restful APIs and web servers that offer dependable and safe communication between the client and the server.
               </p>
             </CardBody>
           </Card>
-          <Card className="shadow-xl">
+          <Card className="bg-white shadow-xl rounded-xl m-2">
             <CardBody>
               <p className='text-xl text-justify p-3'>
                 Integration of third party services such as AWS / Azure
@@ -104,7 +104,7 @@ const Skill = () => {
         </div>
           <div className='flex flex-wrap justify-center items-center'>
             {list.map((item, index) => (
-              <div key={index} className="flex flex-col p-2 m-2 bg-white rounded shadow-xl">
+              <div key={index} className="flex flex-col p-2 m-2 bg-white rounded-xl shadow-xl">
                 <Image
                   width={100}
                   alt={item.title}

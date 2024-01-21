@@ -24,11 +24,11 @@ const MainSection = () => {
               </h3>
             </div>
             <div className="my-3 text-center">
-              <Button radius="full" variant="shadow" className="p-3 mx-3 bg-black text-white">
+              <Button radius="full" variant="shadow" className="p-3 mx-3 bg-black text-white shadow-xl">
                 Resume
                 <FaRegFilePdf />
               </Button>
-              <Button radius="full" variant="shadow" className="p-3 mx-3 bg-black text-white">
+              <Button radius="full" variant="shadow" className="p-3 mx-3 bg-black text-white shadow-xl">
                 Contact Us
                 <FaPhoneAlt />
               </Button>
