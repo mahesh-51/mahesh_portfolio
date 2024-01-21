@@ -18,6 +18,7 @@ import bitBucket from "../images/skills/bitbucket.png";
 import css from "../images/skills/css.png";
 import expressJs from "../images/skills/expressjs.png";
 import MainSection from '@/components/MainSection';
+import Skill from '@/components/Skill';
 
 
 
@@ -72,8 +73,9 @@ const page = () => {
 
   return (
     <>
-      <div className='flex justify-center'>
+      <div className='justify-center'>
         <MainSection />
+        <Skill />
       </div>
 
       {/* <main className="bg-white font-sans conatiner">
