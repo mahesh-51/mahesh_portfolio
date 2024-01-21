@@ -28,11 +28,11 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex h-5 items-center space-x-4 my-4 p-4 max-md:justify-center">
-              <Link href="#" className='text-3xl' >
+              <Link href="https://github.com/mahesh-51" className='text-3xl' >
                 <FaGithub />
               </Link>
               <Divider orientation="vertical" />
-              <Link href="#" className='text-3xl' >
+              <Link href="https://www.linkedin.com/in/mahesh-joshi-37b5ab222/" className='text-3xl' >
                 <FaLinkedinIn />
               </Link>
               <Divider orientation="vertical" />
@@ -40,7 +40,7 @@ const Contact = () => {
                 <FaInstagram />
               </Link>
               <Divider orientation="vertical" />
-              <Link href="#" className='text-3xl' >
+              <Link href="https://discord.com/users/865955210954276864" className='text-3xl' >
                 <FaDiscord />
               </Link>
             </div>
