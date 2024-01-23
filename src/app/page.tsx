@@ -75,7 +75,7 @@ const page = () => {
 
   return (
     <>
-      <div className='justify-center'>
+      <div className='justify-center overflow-hidden'>
         <MainSection />
         <Skill />
         <Projects />

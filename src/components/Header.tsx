@@ -33,7 +33,7 @@ export default function Header() {
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             className="sm:hidden"
           />
-          <NavbarBrand className="flex-none w-14" >
+          <NavbarBrand className="flex-none" >
             <p className="font-bold text-inherit">LOGO</p>
           </NavbarBrand>
         </NavbarContent>
@@ -71,7 +71,7 @@ export default function Header() {
                 {item?.title}
               </Link> */}
               <p
-                className="w-full text-black cursor-pointer"
+                className="text-black cursor-pointer"
                 onClick={() => scrollDivIntoView(item?.url)}
               >
                  {item?.title}
