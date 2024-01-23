@@ -6,7 +6,7 @@ import { FaDiscord, FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 const Contact = () => {
   return (
     <>
-      <div className='min-h-80 bg-slate-200 text-black p-10 '>
+      <div className='min-h-80 bg-slate-200 text-black p-10 ' id='contact'>
         <h1 className='text-center text-6xl py-4 text-black'>Contact Me</h1>
         <div className='flex w-100'>
           <div className='w-50'>

@@ -77,7 +77,7 @@ const list = [
 const Skill = () => {
   return (
     <>
-      <div className='bg-slate-200 min-h-screen text-black p-10'>
+      <div className='bg-slate-200 min-h-screen text-black p-10' id='skills'>
         <h1 className='text-center text-6xl py-4 text-black'>Skills</h1>
         <div className="flex max-md:flex-col p-12">
           <Card className="bg-white shadow-xl rounded-xl m-2">

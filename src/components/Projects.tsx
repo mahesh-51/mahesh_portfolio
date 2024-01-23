@@ -42,7 +42,7 @@ const Projects = () => {
   ];
   return (
     <>
-      <div className='min-h-screen bg-white text-black p-10'>
+      <div className='min-h-screen bg-white text-black p-10' id='projects'>
         <h1 className='text-center text-6xl py-4 text-black'>Projects</h1>
         <div className="flex max-md:flex-col p-12 justify-around">
           {Projects?.map((item, index) => (  
