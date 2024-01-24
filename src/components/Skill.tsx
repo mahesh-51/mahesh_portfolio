@@ -88,7 +88,7 @@ const Skill = () => {
               x: 0, 
               opacity: 1, 
               transition: {
-                duration: 1
+                duration: 1.6
               }
             }}
             className='w-1/3 max-md:w-full'
@@ -103,12 +103,12 @@ const Skill = () => {
           </motion.div>
 
           <motion.div
-            initial={{ y: 300, opacity: 0 }}
+            initial={{ y: -100, opacity: 0 }}
             whileInView={{
               y: 0, 
               opacity: 1, 
               transition: {
-                duration: 1
+                duration: 1.6
               }
             }}
             className='w-2/3 max-md:w-full'
@@ -128,7 +128,7 @@ const Skill = () => {
               x: 0, 
               opacity: 1, 
               transition: {
-                duration: 1
+                duration: 1.6
               }
             }}
             className='w-1/3 max-md:w-full'
@@ -145,10 +145,10 @@ const Skill = () => {
         <div className='flex flex-wrap justify-center items-center'>
           {list.map((item, index) => (
             <motion.div key={index} className="flex flex-col p-2 m-2 bg-white rounded-xl shadow-xl "
-              initial={{ y: 300, opacity: 0 }}
+              initial={{ y: -100, opacity: 0 }}
               whileInView={{
                 y: 0, opacity: 1, transition: {
-                  duration: 1
+                  duration: 1.6
                 }
               }}
               whileHover={{
@@ -163,7 +163,6 @@ const Skill = () => {
                 alt={item.title}
                 className="imgStyle p-4"
                 src={item.img}
-
               />
               <div className="text-center inset-x-0 bottom-0 p-3">
                 <p>{item.title}</p>
