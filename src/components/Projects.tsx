@@ -52,13 +52,13 @@ const Projects = () => {
               initial={{ x: 300, opacity: 0 }}
               whileInView={{
                 x: 0, opacity: 1, transition: {
-                  duration: 1
+                  duration: 1.6
                 }
               }}
               whileHover={{
                 scale: 1.2,
                 transition: {
-                  duration: 1
+                  duration: 1.6
                 }
               }}
             >
@@ -90,7 +90,7 @@ const Projects = () => {
               initial={{ x: 300, opacity: 0 }}
               whileInView={{
                 x: 0, opacity: 1, transition: {
-                  duration: 1
+                  duration: 1.6
                 }
               }}
               whileHover={{
