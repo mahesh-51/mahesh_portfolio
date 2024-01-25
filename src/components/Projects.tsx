@@ -61,8 +61,9 @@ const Projects = () => {
                   duration: 1.6
                 }
               }}
+              key={index}
             >
-              <Card key={index} className="py-4 shadow-xl rounded-xl">
+              <Card className="py-4 shadow-xl rounded-xl">
                 <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                   <h3 className='text-xl'>{item?.title}</h3>
                 </CardHeader>
@@ -99,8 +100,9 @@ const Projects = () => {
                   duration: 1
                 }
               }}
+              key={index}
             >
-              <Card key={index} className="py-4 shadow-xl rounded-xl">
+              <Card className="py-4 shadow-xl rounded-xl">
                 <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                   <h3 className='text-xl'>{item?.title}</h3>
                 </CardHeader>
