@@ -12,18 +12,25 @@ const MainSection = () => {
     scrollDivIntoView("contact")
   }
 
+  const handleResume = () => { 
+    
+  }
+
   return (
     <>
-      <div className='bg-white min-h-screen text-black flex items-center justify-center fontStyle'>
+      <div className='bg-[#DFFCF0] min-h-screen text-black flex items-center justify-center fontStyle' id="home">
         <div className="flex max-md:flex-col">
           <motion.div
-            className='p-12 w-1/2 max-md:w-full'
+            className='m-12 w-1/2 max-md:m-0 max-md:p-2 max-md:w-full'
             initial={{ x: -300, opacity: 0 }}
-            whileInView={{
-              x: 0, opacity: 1, transition: {
+            animate={{
+              x: 0,
+              opacity: 1, 
+              transition: {
                 duration: 1
               }
             }}
+            viewport={{ once: true }}
           >
             <div className='text-center'>
               <h1 className='text-6xl'>Hey I&apos;m Mahesh Joshi</h1>
@@ -33,7 +40,7 @@ const MainSection = () => {
               {/* <motion.h3
                 className='text-3xl p-3'
                 initial={{ y: -300, opacity: 0 }}
-                whileInView={{
+                animate={{
                   y: 0, opacity: 1, transition: {
                     duration: 2,
                     ease: "easeInOut",
@@ -44,16 +51,16 @@ const MainSection = () => {
                 having an experience of building Web applications.
               </motion.h3> */}
               <h3 className='text-3xl p-3'>
-                A passionate Full Stack Software Developer 🚀 <br />
-                having an experience of building Web applications.
+                A passionate Full Stack Software Developer <br />
+                having an experience of building Websites and Applications.
               </h3>
             </div>
             <div className="my-3 text-center">
-              <Button radius="full" variant="shadow" className="py-2 px-4 mx-3 my-3 bg-black text-white shadow-xl">
+              <Button onClick={handleResume} radius="full" variant="shadow" className="py-2 font-semibold px-4 mx-3 my-3 border-solid border-1 border-[#262626] bg-[#D0FAEF] text-black shadow-xl">
                 Resume
                 <FaRegFilePdf className="mx-2" />
               </Button>
-              <Button onClick={handleContactUs} radius="full" variant="shadow" className="py-2 px-4 mx-3 bg-black text-white shadow-xl">
+              <Button onClick={handleContactUs} radius="full" variant="shadow" className="py-2 font-semibold px-4 mx-3 border-solid border-1 border-[#262626] bg-[#D0FAEF] text-black shadow-xl">
                 Contact Us
                 <FaPhoneAlt className="mx-2" />
               </Button>
@@ -61,25 +68,26 @@ const MainSection = () => {
           </motion.div>
           <motion.div
             initial={{ x: 300, opacity: 0 }}
-            whileInView={{
+            animate={{
               x: 0, opacity: 1, transition: {
                 duration: 1
               }
             }}
+            viewport={{ once: true }}
             whileHover={{
               scale: 1.1,
               transition: {
                 duration: 1
               }
             }}
-            className='w-1/2 max-md:w-full'
+            className='w-1/2 max-md:w-full flex justify-center'
           >
             <Image
               height={600}
               width={600}
               alt="NextUI hero Image"
               src={webDev}
-              className="text-center"
+              className="text-center rounded-full"
             />
           </motion.div>
         </div>
