@@ -79,11 +79,11 @@ const list = [
 const Skill = () => {
   return (
     <>
-      <div className='bg-slate-200 min-h-screen text-black p-10' id='skills'>
+      <div className='bg-slate-200 min-h-screen text-black p-10 fontStyle' id='skills'>
         <h1 className='text-center text-6xl py-4 text-black'>Skills</h1>
         <div className="flex max-md:flex-col p-12 ">
           <motion.div
-            initial={{ x: -300, opacity: 0 }}
+            initial={{ x: 300, opacity: 0 }}
             whileInView={{
               x: 0, 
               opacity: 1, 
@@ -103,9 +103,9 @@ const Skill = () => {
           </motion.div>
 
           <motion.div
-            initial={{ y: -100, opacity: 0 }}
+            initial={{ x: 300, opacity: 0 }}
             whileInView={{
-              y: 0, 
+              x: 0, 
               opacity: 1, 
               transition: {
                 duration: 1.6
@@ -145,10 +145,10 @@ const Skill = () => {
         <div className='flex flex-wrap justify-center items-center'>
           {list.map((item, index) => (
             <motion.div key={index} className="flex flex-col p-2 m-2 bg-white rounded-xl shadow-xl "
-              initial={{ y: -100, opacity: 0 }}
+              initial={{ x: -150, opacity: 0 }}
               whileInView={{
-                y: 0, opacity: 1, transition: {
-                  duration: 1.6
+                x: 0, opacity: 1, transition: {
+                  duration: 1.3
                 }
               }}
               whileHover={{

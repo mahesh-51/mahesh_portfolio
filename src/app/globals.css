@@ -25,7 +25,12 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
 .imgStyle{
   aspect-ratio: 3/2 !important;
   object-fit: contain !important; 
+}
+
+.fontStyle {
+  font-family: Arial, Switzer !important;
 }
