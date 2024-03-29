@@ -13,10 +13,6 @@ interface MenuItems {
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const [selectedLink, setSelectedLink] = useState("");
-  const [opened, setOpened] = useState(false);
-  const [hidden, setHidden] = useState(false);
-
   const item = {
     exit: {
       opacity: 0,
@@ -69,7 +65,15 @@ export default function Header() {
 
         <NavbarContent className="sm:hidden pr-3" justify="center">
           <NavbarBrand>
-            <p className="font-bold text-2xl text-danger">DevsMahesh</p>
+            {/* <p className="font-bold text-2xl text-danger">DevsMahesh</p> */}
+            <Image
+              src={devsMahesh}
+              width={200}
+              height={200}
+              alt="DevsMahesh"
+              className="cursor-pointer"
+              onClick={() => scrollDivIntoView("home")}
+            />
           </NavbarBrand>
         </NavbarContent>
 
