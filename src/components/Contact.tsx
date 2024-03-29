@@ -170,7 +170,7 @@ const Contact = () => {
                   <FaLinkedinIn />
                 </Link>
                 <Divider orientation="vertical" />
-                <Link href="#" className='text-3xl' target='_blank' >
+                <Link href="https://www.instagram.com/maheshjoshi___/" className='text-3xl' target='_blank' >
                   <FaInstagram />
                 </Link>
                 <Divider orientation="vertical" />
