@@ -7,25 +7,31 @@ import { AnimatePresence, MotionConfig } from "framer-motion";
 import CloseIcon from "./Nav-Close-Icon";
 import { motion } from "framer-motion";
 import devsMahesh from "../images/DevsMeh.png";
+interface MenuItems {
+  title: string;
+  url: string;
+  id: string;
+}
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [selectedLink , setSelectedLink]  = useState("");
+
+  const [selectedLink, setSelectedLink] = useState("");
   const [opened, setOpened] = useState(false);
   const [hidden, setHidden] = useState(false);
 
-  const item={
-    exit:{
-      opacity:0,
-      height:0,
-      transition:{
-        ease:"easeIn",
+  const item = {
+    exit: {
+      opacity: 0,
+      height: 0,
+      transition: {
+        ease: "easeIn",
         duration: 0.5,
       }
     }
-}
+  }
 
-  const menuItems = [
+  const menuItems: MenuItems[] = [
     {
       title: "Home",
       url: "home",
@@ -48,45 +54,66 @@ export default function Header() {
     },
   ];
 
+  const handleMenu = (item: MenuItems) => {
+    scrollDivIntoView(item?.id);
+  }
+
   return (
     <>
-      <nav className="bg-white font-bold font-satoshi text-sm rounded-b-md sticky">
-        <div className="flex align-middle justify-between py-2 2xl:px-20 container transition-all duration-500 items-center h-[76px] rounded-b-md">
-          <div onClick={() => scrollDivIntoView("home")} className="px-2 fontStyle z-10">
-            <p className="text-3xl text-danger">DevsMahesh</p>
-            {/* <span className="text-sm text-success">Unlocking Imagination, Sparking Brilliance</span> */}
-          </div>
-          <CloseIcon mode={"light"} opened={opened} setOpened={setOpened} setSelectedLink={setSelectedLink}/>
+      <Navbar
+        isBordered
+        isMenuOpen={isMenuOpen}
+        onMenuOpenChange={setIsMenuOpen}
+        className="bg-white text-black"
+      >
+        <NavbarContent className="sm:hidden" justify="start">
+          <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
+        </NavbarContent>
 
-          <AnimatePresence>
-            {opened && (
-              <motion.div
-                className={"max-lg:flex fixed w-screen left-0 h-full pt-20 top-0 justify-start items-center flex-col text-xl text-black bg-slate-50 z-9 "}
-                variants={item}
-                initial={{ height: 0, opacity: 0, display: "none" }}
-                animate={{ height: "101vh", opacity: 1, display: "block" }}
-                transition={{ duration: 0.5 }}
-                exit="exit"
-                onClick={() => setOpened(false)}
-              >
-                {menuItems.map((item, index) => (
-                  <>
-                    <p key={index} onClick={() => scrollDivIntoView(item?.id)} className="px-6 text-lg py-2 cursor-pointer fontStyle">{item?.title}</p>
-                  </>
-                ))}  
-              </motion.div>
-            )}
-          </AnimatePresence>
-          
-          <div className={"text-black font-medium flex flex-1 justify-end max-lg:hidden"}>
-            {menuItems.map((item, index) => (
-              <>
-                <p key={index} onClick={() => scrollDivIntoView(item?.id)} className="px-6 text-xl cursor-pointer fontStyle">{item?.title}</p>
-              </>
-            ))}
-          </div>
-        </div>
-      </nav>
+        <NavbarContent className="sm:hidden pr-3" justify="center">
+          <NavbarBrand>
+            <p className="font-bold text-2xl text-danger">DevsMahesh</p>
+          </NavbarBrand>
+        </NavbarContent>
+
+        <NavbarContent className="hidden sm:flex gap-8" justify="start">
+          <NavbarBrand>
+            <p className="font-bold text-2xl text-danger">DevsMahesh</p>
+          </NavbarBrand>
+        </NavbarContent>
+
+        <NavbarContent className="gap-8" justify="end">
+          <NavbarItem className="hidden lg:flex cursor-pointer" onClick={() => scrollDivIntoView("home")}>
+            Home
+          </NavbarItem>
+          <NavbarItem className="hidden lg:flex cursor-pointer" onClick={() => scrollDivIntoView("skills")}>
+            Skills
+          </NavbarItem>
+          <NavbarItem className="hidden lg:flex cursor-pointer" onClick={() => scrollDivIntoView("projects")}>
+            Projects
+          </NavbarItem>
+          <NavbarItem>
+            <Button onClick={() =>{scrollDivIntoView("contact")}} radius="full" className="bg-black text-white" as={Link} variant="flat">
+              Contact
+            </Button>
+          </NavbarItem>
+        </NavbarContent>
+
+        <NavbarMenu onClick={() => setIsMenuOpen(false)}>
+          {menuItems.map((item, index) => (
+            <NavbarMenuItem key={`${item}-${index}`} >
+                <Link
+                  className="w-full"
+                  color={"foreground"}
+                  size="lg"
+                  onClick={() => handleMenu(item)}
+                >
+                  {item?.title}
+                </Link>
+            </NavbarMenuItem>
+          ))} 
+        </NavbarMenu>
+      </Navbar>
     </>
   );
 }
