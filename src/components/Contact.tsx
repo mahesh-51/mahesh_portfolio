@@ -67,7 +67,7 @@ const Contact = () => {
                   </Link>
                 </motion.h1>
                 <div className="flex">
-                  <div className='w-80 max-md:w-full'>
+                  <div className='w-96 max-md:w-full'>
                     <form onSubmit={sendEmail}>
                       <motion.div
                         initial={{ x: -150, opacity: 0 }}
@@ -126,7 +126,7 @@ const Contact = () => {
                         <Textarea
                           label="Message"
                           placeholder="Enter your description"
-                          className="max-w-xs"
+                          className=""
                           name='message' id='message'
                         />
                       </motion.div>
@@ -143,7 +143,7 @@ const Contact = () => {
                         viewport={{ once: true }}
                         className=''
                       >
-                        <Button type="submit" radius='full' className='shadow-xl w-80 max-md:w-full text-white font-medium bg-black py-2 px-4'>
+                        <Button type="submit" radius='full' className='shadow-xl w-96 max-md:w-full text-white font-medium bg-black py-2 px-4'>
                           Submit
                         </Button>
                       </motion.div>

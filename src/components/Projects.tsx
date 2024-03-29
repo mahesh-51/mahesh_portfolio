@@ -29,7 +29,7 @@ const Projects = () => {
       stack: "React js, Jsx, Redux, HTML and Bootstap"
     },
     {
-      title: "Sim Card",
+      title: "Sim Card (Admin Panel)",
       img: simcardProject,
       content: "Sim Card is used for tourist to buy new Sim cards and provide the Sims Service to tourists people.",
       url: "",

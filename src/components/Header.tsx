@@ -3,10 +3,7 @@ import React, { useState } from "react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@nextui-org/react";
 import { scrollDivIntoView } from "@/utils/function";
 import Image from "next/image";
-import { AnimatePresence, MotionConfig } from "framer-motion";
-import CloseIcon from "./Nav-Close-Icon";
-import { motion } from "framer-motion";
-import devsMahesh from "../images/DevsMeh.png";
+import devsMahesh from "../images/DevsMaheshLogo.png";
 interface MenuItems {
   title: string;
   url: string;
@@ -78,7 +75,15 @@ export default function Header() {
 
         <NavbarContent className="hidden sm:flex gap-8" justify="start">
           <NavbarBrand>
-            <p className="font-bold text-2xl text-danger">DevsMahesh</p>
+            {/* <p className="font-bold text-2xl text-danger">DevsMahesh</p> */}
+            <Image
+              src={devsMahesh}
+              width={200}
+              height={200}
+              alt="DevsMahesh"
+              className="cursor-pointer"
+              onClick={() => scrollDivIntoView("home")}
+            />
           </NavbarBrand>
         </NavbarContent>
 
