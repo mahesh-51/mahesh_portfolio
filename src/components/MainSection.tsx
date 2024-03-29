@@ -29,7 +29,7 @@ const MainSection = () => {
             viewport={{ once: true }}
           >
             <div className='text-center'>
-              <h1 className='text-6xl'>Hey I&apos;m Mahesh Joshi</h1>
+              <h1 className='text-6xl'>Hey I&apos;m <span className='text-danger'>Mahesh Joshi</span></h1>
               <br />
             </div>
             <div className='text-center max-md:text-justify pt-6'>
@@ -81,7 +81,7 @@ const MainSection = () => {
             className='w-1/2 max-md:w-full flex justify-center'
           >
             <Image
-              height={600}
+              height={700}
               width={700}
               alt="NextUI hero Image"
               src={webDev}

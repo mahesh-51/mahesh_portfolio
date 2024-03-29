@@ -9,7 +9,7 @@ export default function Footer() {
     <>
       <div className="bg-black border-2 border-black border-t-white fontStyle">
         <h1
-          className="text-center text-white text-3xl py-6"
+          className="text-center text-danger font-bold text-4xl py-6"
         >
           DevsMahesh 🚀
           {/* ❤️ */}
