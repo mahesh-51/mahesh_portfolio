@@ -1,13 +1,30 @@
 "use client"
-import { Button, Divider, Input } from '@nextui-org/react'
+import { Button, Divider, Input, Textarea } from '@nextui-org/react'
 import Link from 'next/link'
 import React from 'react'
 import { FaDiscord, FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 import { motion } from "framer-motion"
 import Image from 'next/image'
-import devImage from "@/images/image_2.jpg"
+import devImage from "@/images/image_2.jpg";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+
+  function sendEmail(e: React.ChangeEvent<HTMLFormElement>) {
+    e.preventDefault();
+    emailjs
+      .sendForm("service_2zr516o", "template_kyja9tc", e.target, "w302HfaiYg6KI0qvu")
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  }
+
   return (
     <>
       <div className='min-h-screen bg-white text-black p-10 fontStyle' id='contact'>
@@ -51,64 +68,86 @@ const Contact = () => {
                 </motion.h1>
                 <div className="flex">
                   <div className='w-80 max-md:w-full'>
-                    <motion.div
-                      initial={{ x: -150, opacity: 0 }}
-                      animate={{
-                        x: 0,
-                        opacity: 1,
-                        transition: {
-                          duration: 1.6
-                        }
-                      }}
-                      viewport={{ once: true }}
-                      className='py-4'
-                    >
-                      <Input className='' placeholder='Please Enter your Name' type="text" label="Name" />
-                    </motion.div>
-                    <motion.div
-                      initial={{ x: -150, opacity: 0 }}
-                      animate={{
-                        x: 0,
-                        opacity: 1,
-                        transition: {
-                          duration: 1.6
-                        }
-                      }}
-                      viewport={{ once: true }}
-                      className='py-4'
-                    >
-                      <Input className='' placeholder='Please Enter your Contact' type="text" label="Contact" />
-                    </motion.div>
-                    <motion.div
-                      initial={{ x: -150, opacity: 0 }}
-                      animate={{
-                        x: 0,
-                        opacity: 1,
-                        transition: {
-                          duration: 1.6
-                        }
-                      }}
-                      viewport={{ once: true }}
-                      className='py-4'
-                    >
-                      <Input className='' placeholder='Please Enter your Email' type="email" label="E-Mail" />
-                    </motion.div>
-                    <motion.div
-                      initial={{ x: -150, opacity: 0 }}
-                      animate={{
-                        x: 0,
-                        opacity: 1,
-                        transition: {
-                          duration: 1.6
-                        }
-                      }}
-                      viewport={{ once: true }}
-                      className=''
-                    >
-                      <Button radius='full' className='shadow-xl w-80 max-md:w-full text-white font-medium bg-black py-2 px-4'>
-                        Submit
-                      </Button>
-                    </motion.div>
+                    <form onSubmit={sendEmail}>
+                      <motion.div
+                        initial={{ x: -150, opacity: 0 }}
+                        animate={{
+                          x: 0,
+                          opacity: 1,
+                          transition: {
+                            duration: 1.6
+                          }
+                        }}
+                        viewport={{ once: true }}
+                        className='py-4'
+                      >
+                        <Input className='' placeholder='Please Enter your Name' type="text" label="Name" name='name' id='name' />
+                      </motion.div>
+                      <motion.div
+                        initial={{ x: -150, opacity: 0 }}
+                        animate={{
+                          x: 0,
+                          opacity: 1,
+                          transition: {
+                            duration: 1.6
+                          }
+                        }}
+                        viewport={{ once: true }}
+                        className='py-4'
+                      >
+                        <Input className='' placeholder='Please Enter your phone Number' name='number' id='number' type="text" label="Phone Number" />
+                      </motion.div>
+                      <motion.div
+                        initial={{ x: -150, opacity: 0 }}
+                        animate={{
+                          x: 0,
+                          opacity: 1,
+                          transition: {
+                            duration: 1.6
+                          }
+                        }}
+                        viewport={{ once: true }}
+                        className='py-4'
+                      >
+                        <Input className='' placeholder='Please Enter your Email' type="email" label="E-Mail" name='email' id='email'/>
+                      </motion.div>
+                      <motion.div
+                        initial={{ x: -150, opacity: 0 }}
+                        animate={{
+                          x: 0,
+                          opacity: 1,
+                          transition: {
+                            duration: 1.6
+                          }
+                        }}
+                        viewport={{ once: true }}
+                        className='py-4'
+                      >
+                        <Textarea
+                          label="Message"
+                          placeholder="Enter your description"
+                          className="max-w-xs"
+                          name='message' id='message'
+                        />
+                      </motion.div>
+
+                      <motion.div
+                        initial={{ x: -150, opacity: 0 }}
+                        animate={{
+                          x: 0,
+                          opacity: 1,
+                          transition: {
+                            duration: 1.6
+                          }
+                        }}
+                        viewport={{ once: true }}
+                        className=''
+                      >
+                        <Button type="submit" radius='full' className='shadow-xl w-80 max-md:w-full text-white font-medium bg-black py-2 px-4'>
+                          Submit
+                        </Button>
+                      </motion.div>
+                    </form>
                   </div>
                 </div>
               </div>
