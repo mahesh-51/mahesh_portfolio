@@ -5,7 +5,7 @@ import React from 'react'
 import { FaDiscord, FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 import { motion } from "framer-motion"
 import Image from 'next/image'
-import devImage from "@/images/webdev_2.png"
+import devImage from "@/images/image_2.jpg"
 
 const Contact = () => {
   return (
@@ -140,7 +140,7 @@ const Contact = () => {
                 </Link>
               </motion.div>
             </div>
-            <div className='flex justify-center'>
+            <div className='flex justify-center max-md:hidden'>
               <motion.div
                 initial={{ x: 150, opacity: 0 }}
                 animate={{
