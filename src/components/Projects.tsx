@@ -122,7 +122,7 @@ const Projects = () => {
                       
                       <div className="card-actions justify-center">
                         {item?.internalProject ?
-                          <p className='text-danger text-justify px-2 py-1' style={{ width: 270 }}>This project is not accessible, Due to comapny polices</p>
+                          <p className='text-danger text-justify px-2 py-1' style={{ width: 270 }}>This project is not accessible, Due to company polices</p>
                           :
                           <a href={item?.url} target='_blank'>
                             <p className="rounded-full m-3 py-1 px-4 text-center bg-black text-white shadow-xl">Open</p>
@@ -175,7 +175,7 @@ const Projects = () => {
                       </div>
                       <div className="card-actions justify-center">
                         {item?.internalProject ?
-                          <p className='text-danger text-justify px-2 py-1' style={{ width: 270 }}>This project is not accessible, Due to comapny polices</p>
+                          <p className='text-danger text-justify px-2 py-1' style={{ width: 270 }}>This project is not accessible, Due to company polices</p>
                           :
                           <a href={item?.url} target='_blank'>
                             <p className="rounded-full m-3 py-1 px-4 text-center bg-black text-white shadow-xl">Open</p>
