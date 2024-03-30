@@ -81,7 +81,7 @@ const Contact = () => {
                         viewport={{ once: true }}
                         className='py-4'
                       >
-                        <Input className='' placeholder='Please Enter your Name' type="text" label="Name" name='name' id='name' />
+                        <Input required className='' placeholder='Please Enter your Name' type="text" label="Name" name='name' id='name' />
                       </motion.div>
                       <motion.div
                         initial={{ x: -150, opacity: 0 }}
@@ -95,7 +95,7 @@ const Contact = () => {
                         viewport={{ once: true }}
                         className='py-4'
                       >
-                        <Input className='' placeholder='Please Enter your phone Number' name='number' id='number' type="text" label="Phone Number" />
+                        <Input required className='' placeholder='Please Enter your phone Number' name='number' id='number' type="text" label="Phone Number" />
                       </motion.div>
                       <motion.div
                         initial={{ x: -150, opacity: 0 }}
@@ -109,7 +109,7 @@ const Contact = () => {
                         viewport={{ once: true }}
                         className='py-4'
                       >
-                        <Input className='' placeholder='Please Enter your Email' type="email" label="E-Mail" name='email' id='email'/>
+                        <Input required className='' placeholder='Please Enter your Email' type="email" label="E-Mail" name='email' id='email'/>
                       </motion.div>
                       <motion.div
                         initial={{ x: -150, opacity: 0 }}
@@ -128,6 +128,7 @@ const Contact = () => {
                           placeholder="Enter your description"
                           className=""
                           name='message' id='message'
+                          required
                         />
                       </motion.div>
 
