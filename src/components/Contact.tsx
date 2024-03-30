@@ -7,13 +7,33 @@ import { motion } from "framer-motion"
 import Image from 'next/image'
 import devImage from "@/images/image_2.jpg";
 import emailjs from "@emailjs/browser";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const Contact = () => {
 
-  function sendEmail(e: React.ChangeEvent<HTMLFormElement>) {
-    e.preventDefault();
-    emailjs
-      .sendForm("service_2zr516o", "template_kyja9tc", e.target, "w302HfaiYg6KI0qvu")
+  const validationSchema = Yup.object().shape({
+		name: Yup.string().required("Please enter a name"),
+		number: Yup.string().required("Please enter a phone number"),
+		message: Yup.string().required("Please enter a message"),
+		email: Yup.string().required("Please enter a email address").matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i, "Please enter a valid email address"),
+	});
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      number: "",
+      email: "",
+      message: ""
+    },
+    validationSchema,
+    onSubmit: (values) => {
+      sendEmail(values);
+    },
+  });
+  
+  function sendEmail(values: any) {
+    emailjs.send("service_2zr516o", "template_kyja9tc",values, "w302HfaiYg6KI0qvu")
       .then(
         (result) => {
           console.log(result.text);
@@ -21,8 +41,8 @@ const Contact = () => {
         (error) => {
           console.log(error.text);
         }
-      );
-    e.target.reset();
+    );
+    formik.resetForm();
   }
 
   return (
@@ -68,7 +88,7 @@ const Contact = () => {
                 </motion.h1>
                 <div className="flex">
                   <div className='w-96 max-md:w-full'>
-                    <form onSubmit={sendEmail}>
+                    <form onSubmit={formik.handleSubmit}>
                       <motion.div
                         initial={{ x: -150, opacity: 0 }}
                         animate={{
@@ -81,7 +101,21 @@ const Contact = () => {
                         viewport={{ once: true }}
                         className='py-4'
                       >
-                        <Input required className='' placeholder='Please Enter your Name' type="text" label="Name" name='name' id='name' />
+                        <Input
+                          required
+                          value={formik.values.name}
+                          onChange={(e) => formik.setFieldValue('name', e.target.value)}
+                          onBlur={formik.handleBlur}
+                          className=''
+                          placeholder='Please Enter your Name'
+                          type="text"
+                          label="Name"
+                          name='name'
+                          id='name'
+                        />
+                        {formik.touched.name && formik.errors.name ? (
+                          <div className='errorMessage'>{formik.errors.name}</div>
+                        ) : null}
                       </motion.div>
                       <motion.div
                         initial={{ x: -150, opacity: 0 }}
@@ -95,7 +129,21 @@ const Contact = () => {
                         viewport={{ once: true }}
                         className='py-4'
                       >
-                        <Input required className='' placeholder='Please Enter your phone Number' name='number' id='number' type="text" label="Phone Number" />
+                        <Input
+                          required
+                          value={formik.values.number}
+                          onChange={(e) => formik.setFieldValue('number', e.target.value)}
+                          onBlur={formik.handleBlur}
+                          className=''
+                          placeholder='Please Enter your phone Number'
+                          name='number'
+                          id='number'
+                          type="text"
+                          label="Phone Number"
+                        />
+                        {formik.touched.number && formik.errors.number ? (
+                          <div className='errorMessage'>{formik.errors.number}</div>
+                        ) : null}
                       </motion.div>
                       <motion.div
                         initial={{ x: -150, opacity: 0 }}
@@ -109,7 +157,21 @@ const Contact = () => {
                         viewport={{ once: true }}
                         className='py-4'
                       >
-                        <Input required className='' placeholder='Please Enter your Email' type="email" label="E-Mail" name='email' id='email'/>
+                        <Input
+                          required
+                          value={formik.values.email}
+                          onChange={(e) => formik.setFieldValue('email', e.target.value)}
+                          onBlur={formik.handleBlur}
+                          className=''
+                          placeholder='Please Enter your Email'
+                          type="email"
+                          label="E-Mail"
+                          name='email'
+                          id='email'
+                        />
+                        {formik.touched.email && formik.errors.email ? (
+                          <div className='errorMessage'>{formik.errors.email}</div>
+                        ) : null}
                       </motion.div>
                       <motion.div
                         initial={{ x: -150, opacity: 0 }}
@@ -125,11 +187,17 @@ const Contact = () => {
                       >
                         <Textarea
                           label="Message"
+                          value={formik.values.message}
+                          onChange={(e) => formik.setFieldValue('message', e.target.value)}
+                          onBlur={formik.handleBlur}
                           placeholder="Enter your description"
                           className=""
                           name='message' id='message'
                           required
                         />
+                        {formik.touched.message && formik.errors.message ? (
+                          <div className='errorMessage'>{formik.errors.message}</div>
+                        ) : null}
                       </motion.div>
 
                       <motion.div

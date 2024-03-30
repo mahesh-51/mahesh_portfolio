@@ -34,3 +34,10 @@ body {
 .fontStyle {
   font-family: Arial, Switzer !important;
 }
+
+.errorMessage{
+  color: red !important;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
