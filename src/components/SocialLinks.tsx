@@ -1,0 +1,51 @@
+import facebook from "@/assets/icons/facebook.svg";
+import linkedin from "@/assets/icons/linkedin.svg";
+import twitter from "@/assets/icons/twitter.svg";
+import Image from "next/image";
+
+/**
+ * SocialLinks component renders a list of social media links.
+ * @returns {JSX.Element} Rendered social media links.
+ */
+function SocialLinks(): JSX.Element {
+  const socialLinks = [
+    {
+      icon: facebook,
+      href: "#",
+      alt: "Facebook",
+    },
+    {
+      icon: linkedin,
+      href: "#",
+      alt: "Linkedin",
+    },
+    {
+      icon: twitter,
+      href: "#",
+      alt: "Twitter/X",
+    },
+  ];
+
+  return (
+    <ul className="social-links">
+      {socialLinks.map((link, index) => (
+        <li key={index}>
+          <a
+            href={link.href}
+            className="focus"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="visually-hidden">{link.alt}</span>
+            <Image
+              alt={link.alt}
+              role="presentation"
+              src={link.icon}
+            />
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+export default SocialLinks;
