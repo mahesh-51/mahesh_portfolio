@@ -52,7 +52,7 @@ const MainSection = () => {
               </h3>
             </div>
             <div className="my-3 text-center">
-              <a href="/mahesh-joshi.pdf" download={"mahesh-joshi.pdf"}>
+              <a href="/maheshjoshi_fullstack_developer_2yrs_experience.pdf" download={"maheshjoshi_fullstack_developer_2yrs_experience.pdf"}>
                 <Button radius="full" variant="shadow" className="py-2 font-semibold px-4 mx-3 my-3 border-solid border-1 border-[#262626] bg-[#D0FAEF] text-black shadow-xl">
                   Resume
                   <FaRegFilePdf className="mx-2" />
